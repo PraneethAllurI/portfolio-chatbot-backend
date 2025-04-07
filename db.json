@@ -1,0 +1,135 @@
+{
+    "allowedKeywords": [
+      "portfolio", "projects", "skills", "experience", "blog", "tech", "stack", "mern",
+      "chatbot", "resume", "react", "node", "mongodb", "express", "fullstack",
+      "jwt", "cloudinary", "multer", "vercel", "deployment", "linkedin", "github",
+      "ai", "openai", "you", "thank", "redux", "design", "ui", "hey", "hi","ux", "frontend", "backend", "contact", "praneeth", "based", "location"
+    ],
+    "keywords": [
+        {
+          "keyword": "portfolio",
+          "reply": "Praneeth's portfolio showcases his MERN stack skills and includes a personal chatbot."
+        },
+        {
+          "keyword": "projects",
+          "reply": "Praneeth has built a Public Issue Reporting System, JWT Authentication System, Polling App, Hotel booking App."
+        },
+        {
+          "keyword": "blog",
+          "reply": "Praneeth built a Issue Reporting System using MERN, Redux Toolkit, JWT Auth, and OpenAI API."
+        },
+        {
+          "keyword": "skills",
+          "reply": "Praneeth is skilled in the MERN stack, Redux Toolkit, JWT Auth, REST APIs, and OpenAI integrations."
+        },
+        {
+          "keyword": "experience",
+          "reply": "Praneeth has 2.5 years of professional IT experience as a MIM and NOC and experience building real-world full-stack projects with modern tools and best practices."
+        },
+        {
+          "keyword": "chatbot",
+          "reply": "Yes! Praneeth built a personal chatbot using Node.js and OpenAI to assist visitors on his portfolio site."
+        },
+        {
+          "keyword": "mern",
+          "reply": "Praneeth uses the MERN stack — MongoDB, Express, React, and Node.js — to build full-stack apps."
+        },
+        {
+          "keyword": "resume",
+          "reply": "You can find Praneeth’s updated resume on his portfolio or LinkedIn profile."
+        },
+        {
+          "keyword": "github",
+          "reply": "Praneeth's GitHub has all his project source code, including his portfolio and blog generator apps."
+        },
+        {
+          "keyword": "react",
+          "reply": "Praneeth builds dynamic UIs using React and uses modern libraries like Redux and React Router."
+        },
+        {
+          "keyword": "node",
+          "reply": "He uses Node.js with Express to build fast, secure backends with JWT authentication."
+        },
+        {
+          "keyword": "mongodb",
+          "reply": "Praneeth uses MongoDB as a NoSQL database with Mongoose for schema modeling."
+        },
+        {
+          "keyword": "express",
+          "reply": "Praneeth builds REST APIs using Express, handling middleware, routing, and error management."
+        },
+        {
+          "keyword": "fullstack",
+          "reply": "Praneeth is a full-stack developer with expertise in both frontend and backend development."
+        },
+        {
+          "keyword": "jwt",
+          "reply": "He uses JWT for secure authentication and route protection in his full-stack applications."
+        },
+        {
+          "keyword": "cloudinary",
+          "reply": "He integrates Cloudinary for efficient image storage and retrieval in MERN apps."
+        },
+        {
+          "keyword": "vercel",
+          "reply": "Praneeth deploys frontend apps on Vercel for optimal performance and speed."
+        },
+        {
+          "keyword": "linkedin",
+          "reply": "You can connect with Praneeth on LinkedIn to see his latest work and professional updates."
+        },
+        {
+          "keyword": "openai",
+          "reply": "Praneeth uses the OpenAI API to build intelligent features like blog generation and chatbots."
+        },
+        {
+          "keyword": "redux",
+          "reply": "He uses Redux Toolkit for global state management in complex React apps."
+        },
+        {
+          "keyword": "contact",
+          "reply": "Please reach out to him praneeth.allurii@gmail.com."
+        },
+        {
+          "keyword": "email",
+          "reply": "Please reach out to him praneeth.allurii@gmail.com."
+        },
+        {
+          "keyword": "praneeth",
+          "reply": "He is MERN | Full stack developer"
+        },
+        {
+          "keyword": "location",
+          "reply": "His preferred working location Hyderabad, Banglore and Remote"
+        },
+        {
+          "keyword": "hey",
+          "reply": "Hey Hi, How are you?"
+        },
+        {
+          "keyword": "hi",
+          "reply": "Hi, How are you?"
+        },
+        {
+          "keyword": "Hello",
+          "reply": "Hello, How are you?"
+        },
+        {
+          "keyword": "you",
+          "reply": "I'm fine, thank you. Let me know what details you want to know"
+        },
+        {
+          "keyword": "thank",
+          "reply": "Great! Let me know what details you want to know"
+        },
+        {
+          "keyword": "fine",
+          "reply": "Great! Let me know what details you want to know"
+        },
+        {
+          "keyword": "based",
+          "reply": "He is from Warangal"
+        }
+      ]
+    }
+    
