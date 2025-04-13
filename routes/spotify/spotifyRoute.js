@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.get("/login", (req, res) => {
     const scopes = "user-read-playback-state user-modify-playback-state user-read-currently-playing user-top-read streaming";
-    const redirect = `https://accounts.spotify.com/authorize?client_id=${process.env.SPOTIFY_CLIENT_ID}&response_type=code&redirect_uri=${process.env.REDIRECT_URI}&scope=${encodeURIComponent(scopes)}`;
+    const redirect = `https://accounts.spotify.com/authorize?client_id=https://portfolio-chatbot-backend-wj84.onrender.com/api/spotify/callback&response_type=code&redirect_uri=${process.env.REDIRECT_URI}&scope=${encodeURIComponent(scopes)}`;
     res.redirect(redirect);
     console.log("redirected successfully", redirect)
   });
@@ -27,7 +27,7 @@ router.get("/login", (req, res) => {
       const response = await axios.post("https://accounts.spotify.com/api/token", new URLSearchParams({
         grant_type: "authorization_code",
         code,
-        redirect_uri: process.env.REDIRECT_URI,
+        redirect_uri: "https://portfolio-chatbot-backend-wj84.onrender.com/api/spotify/callback",
         client_id: process.env.SPOTIFY_CLIENT_ID,
         client_secret: process.env.SPOTIFY_CLIENT_SECRET,
       }), {
