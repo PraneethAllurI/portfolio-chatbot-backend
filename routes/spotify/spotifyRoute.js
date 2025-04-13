@@ -24,10 +24,11 @@ router.get("/login", (req, res) => {
     }
   
     try {
+      console.log(process.env.SPOTIFY_CLIENT_ID, process.env.SPOTIFY_CLIENT_SECRET)  
       const response = await axios.post("https://accounts.spotify.com/api/token", new URLSearchParams({
         grant_type: "authorization_code",
         code,
-        redirect_uri: "https://portfolio-chatbot-backend-wj84.onrender.com/api/spotify/callback",
+        redirect_uri: process.env.REDIRECT_URI,
         client_id: process.env.SPOTIFY_CLIENT_ID,
         client_secret: process.env.SPOTIFY_CLIENT_SECRET,
       }), {
