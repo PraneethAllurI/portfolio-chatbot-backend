@@ -10,12 +10,12 @@ const spotifyRoutes = require("./routes/spotify/spotifyRoute");
 dotenv.config();
 
 const app = express();
-app.use(cors({
-  origin: "https://praneethalluri.github.io",
-  credentials: true,
-}));
+// app.use(cors({
+//   origin: "https://praneethalluri.github.io",
+//   credentials: true,
+// }));
 
-// app.use(cors());
+app.use(cors());
 app.use(express.json());
 
 app.use("/api", chatRoute); // 💬 Bot routerr

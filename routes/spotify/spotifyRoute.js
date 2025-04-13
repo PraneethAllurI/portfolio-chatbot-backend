@@ -15,32 +15,40 @@ router.get("/login", (req, res) => {
   
   // 🔁 2. Callback to get access + refresh tokens
   router.get("/callback", async (req, res) => {
-    console.log("started the callback")
     const code = req.query.code;
+    console.log("👉 Received callback from Spotify");
+    console.log("🔑 Authorization Code:", code);
+  
+    if (!code) {
+      return res.status(400).json({ error: "Authorization code missing" });
+    }
   
     try {
-      const response = await axios.post("https://accounts.spotify.com/api/token", null, {
-        params: {
-          grant_type: "authorization_code",
-          code,
-          redirect_uri: process.env.REDIRECT_URI,
-          client_id: process.env.SPOTIFY_CLIENT_ID,
-          client_secret: process.env.SPOTIFY_CLIENT_SECRET,
-        },
+      const response = await axios.post("https://accounts.spotify.com/api/token", new URLSearchParams({
+        grant_type: "authorization_code",
+        code,
+        redirect_uri: process.env.REDIRECT_URI,
+        client_id: process.env.SPOTIFY_CLIENT_ID,
+        client_secret: process.env.SPOTIFY_CLIENT_SECRET,
+      }), {
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded", 
+          "Content-Type": "application/x-www-form-urlencoded",
         },
       });
   
-      const { access_token, refresh_token } = response.data;
+      console.log("✅ Access Token Response:", response.data);
   
-      // Just for testing, return tokens
-      res.json({ accessToken : access_token, refreshToken : refresh_token });
+      res.json({
+        access_token,
+        refresh_token,
+        expires_in,
+      });
     } catch (err) {
-      console.error(err);
-      res.status(500).json({ error: "Failed to get tokens" });
+      console.error("❌ Token exchange error:", err.response?.data || err.message);
+      res.status(500).json({ error: "Failed to fetch access token" });
     }
   });
+  
 
   //get top 10 tracks
 
