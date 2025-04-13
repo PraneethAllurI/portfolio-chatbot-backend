@@ -10,7 +10,7 @@ router.get("/login", (req, res) => {
     const scopes = "user-read-playback-state user-modify-playback-state user-read-currently-playing user-top-read streaming";
     const redirect = `https://accounts.spotify.com/authorize?client_id=${process.env.SPOTIFY_CLIENT_ID}&response_type=code&redirect_uri=${process.env.REDIRECT_URI}&scope=${encodeURIComponent(scopes)}`;
     res.redirect(redirect);
-    console.log("redirected successfully")
+    console.log("redirected successfully", redirect)
   });
   
   // 🔁 2. Callback to get access + refresh tokens
@@ -45,7 +45,7 @@ router.get("/login", (req, res) => {
       });
     } catch (err) {
       console.error("❌ Token exchange error:", err.response?.data || err.message);
-      res.status(500).json({ error: "Failed to fetch access token" });
+      res.status(500).json({ error: "Failed to fetch access token", err : err.response?.data });
     }
   });
   
