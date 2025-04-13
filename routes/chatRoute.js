@@ -52,6 +52,7 @@ router.post("/test", async (req, res) => {
   ];
 
   try {
+    console.log("Api call done");
     const response = await axios.post(
       "https://api.openai.com/v1/chat/completions",
       {
@@ -65,7 +66,7 @@ router.post("/test", async (req, res) => {
         },
       }
     );
-
+    console.log("OpenAI API Response:", response.data);
     const aiReply = response.data.choices?.[0]?.message?.content;
     if (aiReply && aiReply.length > 0) {
       return res.json({ reply: aiReply.trim() });
