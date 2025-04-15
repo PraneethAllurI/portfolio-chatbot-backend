@@ -48,12 +48,8 @@ router.get("/callback", async (req, res) => {
     );
 
     const { access_token, refresh_token, expires_in } = response.data;
-    console.log("✅ Access Token Response:", response.data);
-    res.json({
-      access_token,
-      refresh_token,
-      expires_in,
-    });
+    const redirectUrl = `https://praneethallurii.github.io/spotify?access_token=${access_token}&refresh_token=${refresh_token}&expires_in=${expires_in}`;
+res.redirect(redirectUrl);
   } catch (err) {
     console.error(
       "❌ Token exchange error:",
