@@ -189,4 +189,33 @@ router.put("/stop", async (req, res) => {
   }
 });
 
+router.post("/refresh-token", async (req, res) => {
+  const { refresh_token } = req.body;
+
+  if (!refresh_token) {
+    return res.status(400).json({ error: "Refresh token is required" });
+  }
+
+  try {
+    const response = await axios.post("https://accounts.spotify.com/api/token", new URLSearchParams({
+      grant_type: "refresh_token",
+      refresh_token,
+      client_id: process.env.SPOTIFY_CLIENT_ID,
+      client_secret: process.env.SPOTIFY_CLIENT_SECRET,
+    }), {
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+    });
+
+    const { access_token, expires_in } = response.data;
+
+    res.json({ access_token, expires_in });
+  } catch (err) {
+    console.error("❌ Error refreshing token:", err.response?.data || err.message);
+    res.status(500).json({ error: "Failed to refresh token" });
+  }
+});
+
+
 module.exports = router;
