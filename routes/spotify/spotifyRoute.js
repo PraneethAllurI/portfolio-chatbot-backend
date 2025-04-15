@@ -48,7 +48,9 @@ router.get("/callback", async (req, res) => {
     );
 
     const { access_token, refresh_token, expires_in } = response.data;
-    const redirectUrl = `https://praneethalluri.github.io/spotify?access_token=${access_token}&refresh_token=${refresh_token}&expires_in=${expires_in}`;
+    //const redirectUrl = `https://praneethalluri.github.io/spotify?access_token=${access_token}&refresh_token=${refresh_token}&expires_in=${expires_in}`;
+    const redirectUrl = `http://localhost:5173/#/spotify?access_token=${access_token}&refresh_token=${refresh_token}&expires_in=${expires_in}`;
+    console.log(redirectUrl);
     res.redirect(redirectUrl);
   } catch (err) {
     console.error(
