@@ -4,6 +4,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const chatRoute = require("./routes/chatRoute");
 const spotifyRoutes = require("./routes/spotify/spotifyRoute");
+const githubRoutes = require("./routes/github/githubRoute");
 
 
 
@@ -20,6 +21,7 @@ app.use(express.json());
 
 app.use("/api", chatRoute); // 💬 Bot routerr
 app.use("/api/spotify", spotifyRoutes); 
+app.use("/api/github", githubRoutes);
 
 
 const PORT = process.env.PORT || 5000;
